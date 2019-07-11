@@ -85,14 +85,6 @@ Saving checkpoint!
 
 The following figure illustrates the average score over time obtained during training:
 
-![scores_plot.png](./scores_plot.png)
-
-The performance of the trained agent can be viewed in the simulator using `eval_ppo.py` script:
-
-``` bash
-python eval_ppo.py
-```
-
 <img src="img/score.jpg" height="200">
 
 The model was evaluated after training by loading `checkpoint.pth`, and running the environment in evaluation mode (i.e. `train_mode=False`):
