@@ -27,6 +27,9 @@ The environment is considered solved, when the 20 agents in this environment get
 ### Learning Algorithm
 In recent years, several different approaches have been proposed for reinforcement learning with neural network function approximators. The leading contenders are deepQ-learning,'vanilla' policy gradient methods, and trust region / natural policy gradient methods. Q-learning (with function approximation) fails on many simple problems, vanilla policy gradient methods have poor robustness;  and  trust  region  policy  optimization  (TRPO) is not compatible with architectures that include noise (such as dropout) or parameter sharing (between the policy and value function, or with auxiliary tasks). For this project, proximal policy optimization is used, it uses multiple epochs of stochastic gradient ascent to perform each policy update. This methods have the stability and reliability of trust-region methods but are much simpler to implement, requiring only few lines of code change to a vanilla policy gradient implementation.[Schulman et al](https://arxiv.org/abs/1707.06347)
 
+PPO calculates gradient based on the policy likelihood ratio between old and new policy, and leverages ratio clipping to avoid gradient explosion. GAE (Generalized Advantage Estimation) method was used to estimate the advantage function.
+
+
 ### Result & Plot of Rewards
 The environment was solved in under 463 episodes.
 
